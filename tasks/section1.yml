@@ -977,7 +977,7 @@
   block:
       - name: "SCORED | 1.7.1.2 | PATCH | Ensure AppArmor is enabled in the bootloader configuration"
         replace:
-            dest: /etc/default/grub
+            path: /etc/default/grub
             regexp: '^(GRUB_CMDLINE_LINUX=(?!.*apparmor)\"[^\"]*)(\".*)'
             replace: '\1 apparmor=1 security=apparmor\2'
         notify:
@@ -985,7 +985,7 @@
 
       - name: "SCORED | 1.7.1.2 | PATCH | Ensure AppArmor Security is enabled in the bootloader configuration"
         replace:
-            dest: /etc/default/grub
+            path: /etc/default/grub
             regexp: '^(GRUB_CMDLINE_LINUX=(?!.*security)\"[^\"]*)(\".*)'
             replace: '\1 security=apparmor\2'
         notify:
