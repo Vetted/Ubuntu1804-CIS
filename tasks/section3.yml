@@ -1032,7 +1032,7 @@
 
 - name: "NOTSCORED | 3.7 | Disable IPv6"
   replace:
-      dest: /etc/default/grub
+      path: /etc/default/grub
       regexp: '^(GRUB_CMDLINE_LINUX=(?!.*ipv6.disable)\"[^\"]*)(\".*)'
       replace: '\1 ipv6.disable=1\2'
   ignore_errors: true
